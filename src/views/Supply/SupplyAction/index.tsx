@@ -21,7 +21,7 @@ const SupplyAction: FC<Props> = ({ address }) => {
   useEffect(() => {
     // console.log('address', address)
     if (address) {
-      approveCheck(address, tokenDemo1.OToken, tokenDemo1.FToken).then(res => {
+      approveCheck(address, tokenDemo2.OToken, tokenDemo2.FToken).then(res => {
         // console.log('res', res)
         if (res.flag) {
           setAllowance(res.balance)
@@ -34,7 +34,7 @@ const SupplyAction: FC<Props> = ({ address }) => {
   const handlerApprove = async () => {
     try {
       setApproveLoading(true)
-      let result = await approveAction(address, tokenDemo1.OToken, tokenDemo1.FToken)
+      let result = await approveAction(address, tokenDemo2.OToken, tokenDemo2.FToken)
       setApproveLoading(false)
       console.log('result', result)
       setApproveResult(JSON.stringify(result));
@@ -52,7 +52,7 @@ const SupplyAction: FC<Props> = ({ address }) => {
   const handlerSupply = async () => {
     try {
       setSupplyLoading(true)
-      let result = await sendETHTransaction(address, tokenDemo1.FToken, JSON.parse(supplyAbi), [getAmount(0.1, tokenDemo1.float)])
+      let result = await sendETHTransaction(address, tokenDemo2.FToken, JSON.parse(supplyAbi), [getAmount(0.1, tokenDemo2.float)])
       console.log(result)
       setSupplyResult(JSON.stringify(result))
       setSupplyLoading(false)
@@ -64,9 +64,9 @@ const SupplyAction: FC<Props> = ({ address }) => {
   const handlerWithdraw = async () => {
     try {
       setWithdrawLoading(true)
-      let result = await sendETHTransaction(address, tokenDemo1.FToken, JSON.parse(withDrawAbi), [getAmount(0.1, tokenDemo1.float)])
+      let result = await sendETHTransaction(address, tokenDemo2.FToken, JSON.parse(withDrawAbi), [getAmount(0.1, tokenDemo2.float)])
       console.log(result)
-      setSupplyResult(JSON.stringify(result))
+      setWithdrawResult(JSON.stringify(result))
       setWithdrawLoading(false)
     } catch (e) {
       setWithdrawLoading(false)
