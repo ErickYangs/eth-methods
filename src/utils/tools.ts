@@ -32,7 +32,7 @@ export const tokenDemo2 = {
 export const pWing = {
   type: 'ERC20',
   OToken: '0x04F6677Fc2F68Bbd7e0608396D5584750A69e3aC',
-  FToken: '0x8CB3dA33c0bD24EF08E05D3c6C06654c5d568597\n',
+  IToken: '0x8CB3dA33c0bD24EF08E05D3c6C06654c5d568597',
   float: 9
 }
 

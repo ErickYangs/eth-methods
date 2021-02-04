@@ -1,6 +1,6 @@
 import { FC, useEffect, useState } from "react";
 import { Card, Row, Col, Button, message } from "antd";
-import { approveAction, approveCheck, tokenDemo1, sendETHTransaction, findAbiParamter } from "../../../utils/tools";
+import { approveAction, approveCheck, tokenDemo1, sendETHTransaction, findAbiParamter, tokenDemo2 } from "../../../utils/tools";
 import AbiJson from '../../../utils/CErc20Delegator.json'
 import { getAmount } from "../../../utils/count";
 import { supplyAbi, withDrawAbi } from "../../../utils/abi";
@@ -52,9 +52,6 @@ const SupplyAction: FC<Props> = ({ address }) => {
   const handlerSupply = async () => {
     try {
       setSupplyLoading(true)
-      // let abiItem = findAbiParamter(AbiJson.abi, 'type', 'name', 'function', 'mint')
-      // const a = [getAmount(0.1, tokenDemo1.float)]
-      // console.log('AbiJson.abi result', a)
       let result = await sendETHTransaction(address, tokenDemo1.FToken, JSON.parse(supplyAbi), [getAmount(0.1, tokenDemo1.float)])
       console.log(result)
       setSupplyResult(JSON.stringify(result))
