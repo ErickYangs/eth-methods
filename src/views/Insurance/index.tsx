@@ -1,9 +1,14 @@
 import {FC} from "react";
 import {Card} from "antd";
 import InsuranceAction from "./InsuranceAction";
-const InsuranceLay: FC = () => {
+
+type Props = {
+  address?: string
+}
+
+const InsuranceLay: FC<Props> = ({address}) => {
   return <Card title="Insurance Action">
-    <InsuranceAction />
+    <InsuranceAction address={address} />
   </Card>
 }
 

@@ -17,3 +17,7 @@ body {
 .ant-layout-header {
   color: #fff !important;
 }
+
+p {
+  word-break: break-all;
+}

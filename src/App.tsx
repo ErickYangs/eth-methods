@@ -88,9 +88,9 @@ function App() {
       <Layout>
         <Header><HeadInfo account={account} /></Header>
         <Content>
+          <SupplyLay address={account} />
           <BorrowLay />
-          <SupplyLay />
-          <InsuranceLay />
+          <InsuranceLay address={account} />
         </Content>
       </Layout>
     </div>

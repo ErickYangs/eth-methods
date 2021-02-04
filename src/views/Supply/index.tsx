@@ -1,9 +1,12 @@
 import {FC} from "react";
 import {Card} from "antd";
 import SupplyAction from "./SupplyAction";
-const SupplyLay: FC = () => {
+type Props = {
+  address?: string
+}
+const SupplyLay: FC<Props> = ({address}) => {
   return <Card title="Supply Action">
-    <SupplyAction />
+    <SupplyAction address={address} />
   </Card>
 }
 
