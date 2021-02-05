@@ -1,9 +1,11 @@
 import { FC, useEffect, useState } from "react";
-import { Card, Row, Col, Button, message } from "antd";
+import { Card, Row, Col, Button, message, Input } from "antd";
 import { approveAction, approveCheck, tokenDemo1, sendETHTransaction, findAbiParamter, tokenDemo2 } from "../../../utils/tools";
 import AbiJson from '../../../utils/CErc20Delegator.json'
 import { getAmount } from "../../../utils/count";
 import { supplyAbi, withDrawAbi } from "../../../utils/abi";
+
+const { TextArea } = Input;
 
 type Props = {
   address?: string
@@ -83,13 +85,13 @@ const SupplyAction: FC<Props> = ({ address }) => {
               <Button loading={approveLoading} onClick={handlerApprove} type="primary">Approve</Button>
               <p>allowance: {allowance}</p>
               <p>
-                {approveResult}
+                <TextArea value={approveResult} rows={4} />
               </p>
             </Col>
             <Col span={12}>
               <Button type="primary" onClick={handlerSupply} loading={supplyLoading}>Action</Button>
               <p>
-                result: {supplyResult}
+                <TextArea value={supplyResult} rows={4} />
               </p>
             </Col>
           </Row>
@@ -99,7 +101,7 @@ const SupplyAction: FC<Props> = ({ address }) => {
         <Card size="small" title="withdraw">
           <Button type="primary" loading={withdrawLoading} onClick={handlerWithdraw}>Action</Button>
           <p>
-            result: {withdrawResult}
+            <TextArea value={withdrawResult} rows={4} />
           </p>
         </Card>
       </Col>

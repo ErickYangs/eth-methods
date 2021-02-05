@@ -10,30 +10,35 @@ export const findAbiParamter = (arr: Array<any> = [], a: string, b: string, a1: 
   return arr.find(item => item[a] === a1 && item[b] === b1)
 }
 
-export const comptrollerAddress = '0xc83CCFDAADc6aDAb82fb5b7A27563A1BA50D2d57';
+export const comptrollerAddress = '0x73B6DA765D4acBA261190095DC6Bbec111C26445\n';
 
 // underlying token / OToken
 // ctoken / FToken
 
 export const tokenDemo1 = {
   type: 'ERC20',
-  OToken: '0xD82a57FAfB08f6Dd0cBFa87bf05103A54ba1b162',
-  FToken: '0xAcEe55c649b854f5Da76620CeA6e175E5b2AAE0e',
+  OToken: '0xC355dA16DA42B3083D6548dbe4B54481Dde40278',
+  FToken: '0xE2E68B83A982CEb817FA5B0495E546d2ca2B0966',
   float: 18
 }
 
 export const tokenDemo2 = {
   type: 'ERC20',
-  OToken: '0x240AC599611B20906E7fd58E1203D92271e7B444',
-  FToken: '0x0a6ece7Ba3403D37642DB2E3D1D0Bf3234724554',
+  OToken: '0x9Eb481D66Ea35E6f4b430ACB8A1e5Fb12b3DcD85',
+  FToken: '0x27F9dBbF3Fc48bbe3d28D8A6873DbAC0F44A0440',
   float: 18
 }
 
 export const pWing = {
   type: 'ERC20',
-  OToken: '0x04F6677Fc2F68Bbd7e0608396D5584750A69e3aC',
-  IToken: '0x8CB3dA33c0bD24EF08E05D3c6C06654c5d568597',
+  OToken: '0xD87e571d678B67dF382e4FC6f6438a45fE2688aa',
+  IToken: '0xe8F4Db91564d08Eb85626fe4EC83601080F82E32',
   float: 9
+}
+
+export const ethToken = {
+  type: 'ETH',
+  FToken: '0xbFF7243a4ef624a61Cd340766cfcce766b325621'
 }
 
 const ERC20_ABI =

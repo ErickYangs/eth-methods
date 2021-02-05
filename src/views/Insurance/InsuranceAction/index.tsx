@@ -1,5 +1,5 @@
 import {FC, useEffect, useState} from "react";
-import {Button, Card, Col, message, Row} from "antd";
+import {Button, Card, Col, message, Row, Input} from "antd";
 import {
   approveAction,
   approveCheck,
@@ -11,6 +11,9 @@ import {
 import AbiJson from '../../../utils/IErc20Delegator.json'
 import {insureAbi, supplyAbi} from "../../../utils/abi";
 import {getAmount} from "../../../utils/count";
+
+const { TextArea } = Input;
+
 type Props = {
   address?: string
 }
@@ -76,13 +79,13 @@ const InsuranceAction: FC<Props> = ({address}) => {
               <Button type="primary" onClick={handlerApprove} loading={approveLoading}>Approve</Button>
               <p>allowance: {allowance}</p>
               <p>
-                {approveResult}
+                <TextArea value={approveResult} rows={4} />
               </p>
             </Col>
             <Col span={12}>
               <Button type="primary" onClick={handlerInsure} loading={insureLoading}>Action</Button>
               <p>
-                result: {insureResult}
+                <TextArea value={insureResult} rows={4} />
               </p>
             </Col>
           </Row>
@@ -92,7 +95,7 @@ const InsuranceAction: FC<Props> = ({address}) => {
         <Card size="small" title="surrender">
           <Button type="primary" loading={surrenderLoading} onClick={handlerSurrender}>Action</Button>
           <p>
-            result: {surrenderResult}
+            <TextArea value={surrenderResult} rows={4} />
           </p>
         </Card>
       </Col>
